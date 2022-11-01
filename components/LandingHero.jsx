@@ -29,7 +29,7 @@ const LandingHero = () => {
         </div>
       </div>
       <div className="left-1/2 lg:translate-y-1/2 -translate-x-1/2 z-20 flex justify-center absolute bottom-[2%] sm:bottom-[10%] lg:bottom-0 items-center gap-4 w-full px-5 lg:flex-row flex-col max-w-[1183px]">
-        <div className="flex sm:flex-row flex-col-reverse justify-between items-center w-full bg-white rounded-[15px] overflow-hidden">
+        <div className="shadow-lg flex sm:flex-row flex-col-reverse justify-between items-center w-full bg-white rounded-[15px] overflow-hidden">
           <div className="sm:py-0 py-5  flex justify-center items-center gap-4 px-2">
             <Image src={"/calendar.png"} width={83} height={88} />
             <h2 className="font-nunito text-lg xl:text-[24px] text-[#273257] font-bold">
@@ -44,7 +44,7 @@ const LandingHero = () => {
             />
           </div>
         </div>
-        <div className="flex sm:flex-row flex-col-reverse justify-between items-center w-full bg-white rounded-[15px] overflow-hidden">
+        <div className="flex shadow-lg sm:flex-row flex-col-reverse justify-between items-center w-full bg-white rounded-[15px] overflow-hidden">
           <div className="flex sm:py-0 py-5 justify-center items-center gap-4 px-2">
             <Image src={"/stethoscope.png"} width={83} height={88} />
             <h2 className="font-nunito text-[#273257] text-lg xl:text-[24px] font-bold">
