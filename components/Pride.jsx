@@ -3,7 +3,7 @@ import Image from "next/image";
 const Pride = () => {
   return (
     <div className="w-full flex justify-center items-center mt-8">
-      <div className="w-full flex-col lg:flex-col flex justify-between items-start gap-2 max-w-[1183px] lg:py-0 py-[20px] px-5">
+      <div className="w-full flex-col lg:flex-row  flex justify-between items-start gap-2 max-w-[1183px] lg:py-0 py-[20px] px-5">
         <div className="flex w-full justify-start items-start flex-col">
           <div className="flex flex-col justify-center items-start gap-1 text-left">
             <h3 className="text-cyan font-bold font-nunito text-base sm:text-[22px]">
