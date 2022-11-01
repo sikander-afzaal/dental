@@ -3,7 +3,7 @@ import Brand from "../components/Brand";
 import Choose from "../components/Choose";
 import Doctors from "../components/Doctors";
 import Faq from "../components/Faq";
-import Happy from "../components/happy";
+import Happy from "../components/Happy";
 import LandingHero from "../components/LandingHero";
 import Pride from "../components/Pride";
 import Product from "../components/Product";
