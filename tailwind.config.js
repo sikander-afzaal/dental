@@ -15,6 +15,8 @@ module.exports = {
       colors: {
         cyan: "#00D1C2",
         "text-black": "#161616",
+        "main-text": "#263355",
+        "gray-text": "#545454",
       },
     },
   },
