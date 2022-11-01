@@ -75,36 +75,42 @@ const Navbar = () => {
               />
               <a
                 href="#"
+                onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 Home
               </a>
               <a
                 href="#"
+                onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 About Us
               </a>
               <a
                 href="#"
+                onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 Treatments
               </a>
               <a
                 href="#"
+                onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 Before & After
               </a>
               <a
                 href="#"
+                onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 Dental Tourism
               </a>
               <a
                 href="#"
+                onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 Contact Us
