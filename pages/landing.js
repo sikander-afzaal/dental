@@ -1,4 +1,6 @@
 import Best from "../components/Best";
+import Choose from "../components/Choose";
+import Doctors from "../components/Doctors";
 import LandingHero from "../components/LandingHero";
 import Pride from "../components/Pride";
 import Steps from "../components/Steps";
@@ -12,6 +14,8 @@ const Landing = () => {
       <Work />
       <Steps />
       <Pride />
+      <Doctors />
+      <Choose />
     </>
   );
 };

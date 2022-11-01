@@ -23,3 +23,27 @@
   padding: 0;
   box-sizing: border-box !important;
 }
+.slider .splide__pagination__page {
+  width: 51px;
+  border-radius: 100vh;
+  height: 18px;
+  background-color: #c5c5c5;
+  transform: none;
+}
+.slider .splide__pagination__page.is-active {
+  width: 51px;
+  border-radius: 100vh;
+  height: 18px;
+  background-color: #00d1c2;
+  transform: none;
+}
+.choose-slider {
+  width: 100%;
+}
+@media screen and (max-width: 1183px) {
+  .slider li {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
