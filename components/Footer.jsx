@@ -13,7 +13,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="w-full justify-between mt-5 flex-col items-center flex bg-[#0043A2] ">
+    <div className="w-full justify-between mt-[50px] flex-col items-center flex bg-[#0043A2] ">
       <footer className="flex justify-start items-start flex-col w-full max-w-[1183px] px-5">
         <div className="py-5 lg:p-0 lg:h-[100px] flex-col lg:flex-row flex w-full justify-between items-center sm:items-start lg:items-center gap-6 lg:gap-2">
           <a
