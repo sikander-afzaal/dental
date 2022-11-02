@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 const Pride = () => {
+  //ss
   return (
     <div className="w-full flex justify-center items-center  lg:mb-[100px] mt-[40px] mb-[40px] lg:mt-[80px]">
       <div className="w-full flex-col lg:flex-row  flex justify-between items-start gap-2 max-w-[1183px] lg:py-0 py-[20px] px-5">
