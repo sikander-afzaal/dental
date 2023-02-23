@@ -22,6 +22,7 @@ import { fetchTreatments } from "../../queries/treatments";
 const Navbar = () => {
   const [openHeader, setOpenHeader] = useState(false);
   const [treatments, setTreatments] = useState([]);
+  const [dropDown, setDropDown] = useState(false);
   const setLanguage = useSetAtom(languageAtom);
   const router = useRouter();
   const { pathname, asPath, query, locale } = router;
@@ -113,14 +114,14 @@ const Navbar = () => {
       </div>
       <div className="flex h-[92px] justify-center items-center w-full bg-white px-5 relative">
         <div className="flex justify-between items-center w-full max-w-[1440px]">
-          <div className="flex justify-start items-center gap-10 xl:gap-[103px] ">
+          <div className="flex justify-start items-center gap-10 2xl:gap-[103px] ">
             <Link href="/">
               <Image
                 src={"/logo.png"}
                 width={170}
                 height={54}
                 alt="logo"
-                className="w-auto h-auto"
+                className="w-[170px] lg:w-[100px] 2xl:w-auto h-auto"
               />
             </Link>
             <div
@@ -132,7 +133,7 @@ const Navbar = () => {
             <nav
               className={`lg:static z-[60] fixed top-0 ${
                 openHeader ? "right-0" : "-right-[600px]"
-              } lg:right-0 flex-col lg:flex-row bg-white h-screen lg:h-auto flex justify-start w-full max-w-[360px] lg:p-0 py-24 px-9 lg:max-w-max lg:w-auto lg:justify-center items-start lg:items-center gap-6 lg:gap-4 xl:gap-6 transition-all duration-1000 lg:overflow-auto overflow-y-scroll`}
+              } lg:right-0 flex-col lg:flex-row bg-white h-screen lg:h-auto flex justify-start w-full max-w-[360px] lg:p-0 py-24 px-9 lg:max-w-max lg:w-auto lg:justify-center items-start lg:items-center gap-6 lg:gap-4 xl:gap-6 transition-all duration-1000 lg:overflow-visible overflow-y-auto`}
             >
               <FontAwesomeIcon
                 icon={faXmark}
@@ -153,27 +154,35 @@ const Navbar = () => {
               >
                 About Us
               </Link>
-              <div className="relative">
-                <button className="flex gap-2 items-center">
+              <div className="relative lg:h-[92px]">
+                <button
+                  onMouseEnter={() => setDropDown(true)}
+                  onClick={() => setDropDown((prev) => !prev)}
+                  onMouseLeave={() => setDropDown(false)}
+                  className="flex  lg:h-full gap-2 items-center"
+                >
                   <p className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black">
                     Treatments
                   </p>
 
                   <FontAwesomeIcon
                     icon={faChevronDown}
-                    className={`text-black text-[16px] w-5 group-hover:rotate-180`}
+                    className={`text-black text-[16px] w-4 transition-all duration-150 ${
+                      dropDown ? "rotate-180" : "rotate-0"
+                    }`}
                   />
                 </button>
-
-                <div
-                  className={`hidden rounded group-hover:block py-2.5 lg:absolute lg:top-[3.5rem] lg:px-5 lg:bg-white lg:shadow-2xl lg:drop-shadow-2xl  lg:z-[60]   `}
-                >
-                  <div className="flex flex-col items-start max-h-fit lg:max-h-[120px] lg:min-w-10 lg:overflow-scroll gap-4">
+                {dropDown && (
+                  <div
+                    onMouseEnter={() => setDropDown(true)}
+                    onMouseLeave={() => setDropDown(false)}
+                    className={` rounded-lg flex transition-all duration-300 py-2 lg:max-h-[500px] overflow-y-auto hide-scroll static lg:absolute lg:px-2 top-[80%] lg:bg-white lg:shadow-2xl lg:drop-shadow-2xl  lg:z-[60] min-w-[220px]  w-max flex-col `}
+                  >
                     {treatments.map((t, index) => (
                       <Link
                         href="/treatments/[id]"
                         as={`/treatments/${t.id}`}
-                        className="text-slate-500 hover:text-cyan hover:underline hover:decoration-cyan"
+                        className="text-slate-500 w-full lg:px-2 rounded-lg transition-all duration-150 py-4 hover:text-white  hover:bg-cyan"
                         key={index}
                         onClick={() => {
                           setOpenHeader(false);
@@ -183,7 +192,7 @@ const Navbar = () => {
                       </Link>
                     ))}
                   </div>
-                </div>
+                )}
               </div>
 
               <Link

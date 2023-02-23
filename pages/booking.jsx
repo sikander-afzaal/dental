@@ -412,6 +412,9 @@ const Step3 = ({ setStep, variants, selected, setSelected }) => {
           name="message"
         ></textarea>
         <button
+          onClick={(e) => {
+            e.preventDefault();
+          }}
           type="submit"
           className="bg-cyan mx-5 uppercase cursor-pointer text-white font-semibold w-[157px] h-[51px] rounded-full text-sm"
         >
