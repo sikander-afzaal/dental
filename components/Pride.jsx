@@ -15,7 +15,15 @@ const Pride = () => {
             </h2>
           </div>
           <div className="w-full h-[400px] relative mt-5 rounded-md overflow-hidden lg:mt-10">
-            <Image src={"/pride.png"} fill style={{ objectFit: "cover" }} />
+            <Image
+              src={"/pride.png"}
+              fill
+              style={{ objectFit: "cover" }}
+              alt=""
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            />
           </div>
         </div>
         <div className="w-full flex  justify-start items-start flex-col">

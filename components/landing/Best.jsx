@@ -4,9 +4,9 @@ const Card = ({ image, icon, head, desc }) => {
   return (
     <div className="flex justify-start rounded-[10px] pb-5 items-start overflow-hidden shadow-lg flex-col ">
       <div className="relative w-full h-[240px]">
-        <Image src={image} fill />
+        <Image src={image} fill alt=""/>
         <div className="bg-white overflow-hidden flex justify-center items-center absolute w-[70px] h-[67px] bottom-2 right-3 shadow rounded-md">
-          <Image src={icon} width={35} height={39} />
+          <Image src={icon} width={35} height={39} alt=""/>
         </div>
       </div>
       <div className="flex justify-start flex-col px-5 items-start gap-1 my-7">

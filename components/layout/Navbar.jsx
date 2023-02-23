@@ -11,13 +11,71 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSetAtom } from "jotai";
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { languageAtom } from "../../state";
+import { fetchTreatments } from "../../queries/treatments";
 
 const Navbar = () => {
   const [openHeader, setOpenHeader] = useState(false);
+  const [treatments, setTreatments] = useState([]);
+  const setLanguage = useSetAtom(languageAtom);
+  const router = useRouter();
+  const { pathname, asPath, query, locale } = router;
+
+  const changeLanguage = (language) => {
+    setOpenHeader(false);
+    setLanguage(language);
+    if (!pathname.includes("/treatments/[id]"))
+      router.push({ pathname, query }, asPath, { locale: language });
+    else {
+      const treatment = treatments.find((e) => e.id === parseInt(query.id));
+
+      if (treatment && treatment.attributes.locale === language) {
+        router.push({ pathname, query }, asPath, { locale: language });
+      } else if (treatment) {
+        const treatmentLoc = treatment.attributes.localizations.data.find(
+          (e) => e.attributes.locale === language
+        );
+
+        router.push(
+          {
+            pathname,
+            query: { id: treatmentLoc ? treatmentLoc.id.toString() : query.id },
+          },
+          treatmentLoc ? undefined : asPath,
+          {
+            locale: language,
+          }
+        );
+      } else {
+        router.push({ pathname, query }, asPath, { locale: language });
+      }
+    }
+  };
+
+  useEffect(() => {
+    const getTreatments = async () => {
+      const treatments = await fetchTreatments(locale);
+
+      const treatmentsData = treatments.data.map((treat) => {
+        return {
+          id: treat.id,
+          name: treat.attributes.name,
+          ...treat,
+        };
+      });
+      setTreatments(treatmentsData);
+    };
+
+    getTreatments();
+  }, [locale]);
+
   return (
-    <div className="flex justify-center items-center flex-col w-full ">
+    <div className="flex justify-center items-center flex-col w-full">
       <div className="flex h-auto  items-center py-5 lg:py-0 lg:h-[50px] justify-center  w-full bg-[#0643A2] px-5">
         <div className="flex flex-col sm:flex-row justify-between sm:items-center items-start gap-4 sm:gap-0 w-full max-w-[1440px]">
           <div className="flex justify-start items-start lg:items-center gap-4 lg:flex-row flex-col">
@@ -53,10 +111,18 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="flex h-[92px] justify-center items-center w-full bg-white px-5">
+      <div className="flex h-[92px] justify-center items-center w-full bg-white px-5 relative">
         <div className="flex justify-between items-center w-full max-w-[1440px]">
-          <div className="flex justify-start items-center gap-10 xl:gap-[103px]">
-            <Image src={"/logo.png"} width={170} height={54} alt="logo" />
+          <div className="flex justify-start items-center gap-10 xl:gap-[103px] ">
+            <Link href="/">
+              <Image
+                src={"/logo.png"}
+                width={170}
+                height={54}
+                alt="logo"
+                className="w-auto h-auto"
+              />
+            </Link>
             <div
               onClick={() => setOpenHeader(false)}
               className={`${
@@ -66,41 +132,67 @@ const Navbar = () => {
             <nav
               className={`lg:static z-[60] fixed top-0 ${
                 openHeader ? "right-0" : "-right-[600px]"
-              } lg:right-0 flex-col lg:flex-row bg-white h-screen lg:h-auto flex justify-start w-full max-w-[360px] lg:p-0 py-24 px-9 lg:max-w-max lg:w-auto lg:justify-center items-start lg:items-center gap-6 lg:gap-4 xl:gap-6 transition-all duration-1000`}
+              } lg:right-0 flex-col lg:flex-row bg-white h-screen lg:h-auto flex justify-start w-full max-w-[360px] lg:p-0 py-24 px-9 lg:max-w-max lg:w-auto lg:justify-center items-start lg:items-center gap-6 lg:gap-4 xl:gap-6 transition-all duration-1000 lg:overflow-auto overflow-y-scroll`}
             >
               <FontAwesomeIcon
                 icon={faXmark}
                 onClick={() => setOpenHeader(false)}
                 className="block absolute top-5 right-5 lg:hidden text-text-black w-4 cursor-pointer"
               />
-              <a
-                href="#"
+              <Link
+                href="/"
                 onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 Home
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/about"
                 onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 About Us
-              </a>
-              <a
-                href="#"
-                onClick={() => setOpenHeader(false)}
-                className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
-              >
-                Treatments
-              </a>
-              <a
-                href="#"
+              </Link>
+              <div className="relative">
+                <button className="flex gap-2 items-center">
+                  <p className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black">
+                    Treatments
+                  </p>
+
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className={`text-black text-[16px] w-5 group-hover:rotate-180`}
+                  />
+                </button>
+
+                <div
+                  className={`hidden rounded group-hover:block py-2.5 lg:absolute lg:top-[3.5rem] lg:px-5 lg:bg-white lg:shadow-2xl lg:drop-shadow-2xl  lg:z-[60]   `}
+                >
+                  <div className="flex flex-col items-start max-h-fit lg:max-h-[120px] lg:min-w-10 lg:overflow-scroll gap-4">
+                    {treatments.map((t, index) => (
+                      <Link
+                        href="/treatments/[id]"
+                        as={`/treatments/${t.id}`}
+                        className="text-slate-500 hover:text-cyan hover:underline hover:decoration-cyan"
+                        key={index}
+                        onClick={() => {
+                          setOpenHeader(false);
+                        }}
+                      >
+                        {t.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                href="/before-and-after"
                 onClick={() => setOpenHeader(false)}
                 className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
               >
                 Before & After
-              </a>
+              </Link>
               <a
                 href="#"
                 onClick={() => setOpenHeader(false)}
@@ -115,6 +207,26 @@ const Navbar = () => {
               >
                 Contact Us
               </a>
+              <div className="flex justify-center items-center gap-4">
+                <button
+                  onClick={() => changeLanguage("en-US")}
+                  className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
+                >
+                  🇺🇸
+                </button>
+                <button
+                  onClick={() => changeLanguage("it")}
+                  className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
+                >
+                  🇮🇹
+                </button>
+                <button
+                  onClick={() => changeLanguage("sq")}
+                  className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black"
+                >
+                  🇦🇱
+                </button>
+              </div>
               <div className="flex lg:hidden justify-center items-center gap-5">
                 <FontAwesomeIcon
                   icon={faChevronDown}

@@ -67,7 +67,7 @@ const Happy = () => {
               teration in some form
             </p>
             <div className="flex justify-start items-center gap-3">
-              <Image src={"/woman.png"} width={58} height={58} />
+              <Image src={"/woman.png"} width={58} height={58} alt=""/>
               <div>
                 {" "}
                 <h5 className="text-lg font-bold font-nunito text-[#0643A2]">
@@ -92,7 +92,7 @@ const Happy = () => {
               teration in some form
             </p>
             <div className="flex justify-start items-center gap-3">
-              <Image src={"/woman.png"} width={58} height={58} />
+              <Image src={"/woman.png"} width={58} height={58} alt=""/>
               <div>
                 {" "}
                 <h5 className="text-lg font-bold font-nunito text-[#0643A2]">
@@ -117,7 +117,7 @@ const Happy = () => {
               teration in some form
             </p>
             <div className="flex justify-start items-center gap-3">
-              <Image src={"/woman.png"} width={58} height={58} />
+              <Image src={"/woman.png"} width={58} height={58} alt=""/>
               <div>
                 {" "}
                 <h5 className="text-lg font-bold font-nunito text-[#0643A2]">

@@ -39,27 +39,27 @@ const Choose = () => {
       >
         <SplideSlide>
           <div className="w-full max-w-[450px] h-[500px] relative">
-            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} />
+            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} alt="" />
           </div>
         </SplideSlide>
         <SplideSlide>
           <div className="w-full max-w-[450px] h-[500px] relative">
-            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} />
+            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} alt="" />
           </div>
         </SplideSlide>
         <SplideSlide>
           <div className="w-full max-w-[450px] h-[500px] relative">
-            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} />
+            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} alt="" />
           </div>
         </SplideSlide>
         <SplideSlide>
           <div className="w-full max-w-[450px] h-[500px] relative">
-            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} />
+            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} alt="" />
           </div>
         </SplideSlide>
         <SplideSlide>
           <div className="w-full max-w-[450px] h-[500px] relative">
-            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} />
+            <Image fill src={"/choose.png"} style={{ objectFit: "cover" }} alt="" />
           </div>
         </SplideSlide>
       </Splide>

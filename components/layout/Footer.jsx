@@ -109,6 +109,7 @@ const Footer = () => {
             <div className="flex justify-start items-center sm:items-start gap-6 flex-col">
               <div className="flex justify-start flex-col sm:flex-row items-center gap-3">
                 <Image
+                  alt=""
                   src={"/foot-img.png"}
                   width={71}
                   style={{ borderRadius: "50%" }}
@@ -125,6 +126,7 @@ const Footer = () => {
               </div>
               <div className="flex justify-start flex-col sm:flex-row items-center gap-3">
                 <Image
+                  alt=""
                   src={"/foot-img.png"}
                   width={71}
                   style={{ borderRadius: "50%" }}

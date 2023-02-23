@@ -4,7 +4,7 @@ const Work = () => {
   return (
     <div className="w-full grid grid-cols-1 gap-7 lg:gap-0 lg:grid-cols-2 bg-[#F3FAFA] mt-[80px]">
       <div className="w-full md:h-[450px] h-[300px] lg:h-[582px] row-start-2 lg:row-span-1 row-end-3 relative">
-        <Image src={"/work.png"} fill style={{ objectFit: "cover" }} />
+        <Image alt="" src={"/work.png"} fill style={{ objectFit: "cover" }} />
       </div>
       <div className="flex justify-center items-start flex-col px-5 pt-6 lg:pt-0 lg:px-16">
         <div className="flex flex-col justify-center items-start gap-1 text-left">
@@ -24,7 +24,7 @@ const Work = () => {
           aliqua.
         </p>
         <div className="flex justify-start items-start gap-3 my-7">
-          <Image src={"/quotes.png"} width={45} height={42} />
+          <Image alt="" src={"/quotes.png"} width={45} height={42} />
           <p className="text-lg font-medium font-nunito max-w-[372px]">
             I am alone, and feel the charm of existence in which was real
             estate, medical.
@@ -35,7 +35,7 @@ const Work = () => {
             More About
           </button>
           <div className="items-center flex justify-center gap-3">
-            <Image src={"/ceo.png"} width={59} height={59} />
+            <Image alt="" src={"/ceo.png"} width={59} height={59} />
             <div>
               <h4 className="text-main-text text-lg font-bold font-nunito">
                 Dr Zason Jak

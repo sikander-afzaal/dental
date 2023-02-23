@@ -13,36 +13,42 @@ const Clinic = () => {
       </div>
       <div className=" w-full self-end mt-[40px] gap-5 max-w-[full] overflow-x-auto flex justify-start items-center">
         <Image
+          alt=""
           src={"/clinic.png"}
           width={430}
           height={720}
           style={{ objectFit: "cover" }}
         />
         <Image
+          alt=""
           src={"/clinic.png"}
           width={430}
           height={720}
           style={{ objectFit: "cover" }}
         />
         <Image
+          alt=""
           src={"/clinic.png"}
           width={430}
           height={720}
           style={{ objectFit: "cover" }}
         />
         <Image
+          alt=""
           src={"/clinic.png"}
           width={430}
           height={720}
           style={{ objectFit: "cover" }}
         />
         <Image
+          alt=""
           src={"/clinic.png"}
           width={430}
           height={720}
           style={{ objectFit: "cover" }}
         />
         <Image
+          alt=""
           src={"/clinic.png"}
           width={430}
           height={720}

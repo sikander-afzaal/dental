@@ -4,7 +4,7 @@ const Steps = () => {
   return (
     <div className="flex py-[50px] min-h-[800px] justify-center items-center w-full flex-col relative">
       <div className="w-full h-full absolute left-0 top-0 z-10">
-        <Image fill src={"/steps.png"} style={{ objectFit: "cover" }} />
+        <Image fill src={"/steps.png"} style={{ objectFit: "cover" }} alt=""/>
       </div>
       <div className="w-full h-full absolute left-0 top-0 z-20 bg-cyan opacity-90"></div>
       <div className="relative px-5 z-30 w-full max-w-[1440px] flex justify-center items-center flex-col">
@@ -19,7 +19,7 @@ const Steps = () => {
         </div>
         <div className="flex justify-center sm:justify-between flex-wrap items-center w-full flex-row gap-5 mt-[40px] sm:mt-[80px]">
           <div className="flex justify-start h-[300px] items-center w-full max-w-[310px] flex-col text-center">
-            <Image src={"/step1.png"} width={224} height={224} />
+            <Image src={"/step1.png"} width={224} height={224} alt=""/>
             <h2 className="text-[30px] text-white font-bold font-nunito">
               Appointment
             </h2>
@@ -28,7 +28,7 @@ const Steps = () => {
             </p>
           </div>
           <div className="flex justify-start h-[300px] items-center w-full max-w-[310px] flex-col text-center">
-            <Image src={"/step1.png"} width={224} height={224} />
+            <Image src={"/step1.png"} width={224} height={224} alt=""/>
             <h2 className="text-[30px] text-white font-bold font-nunito">
               Expert Doctor
             </h2>
@@ -38,7 +38,7 @@ const Steps = () => {
             </p>
           </div>
           <div className="flex justify-start h-[300px] items-center w-full max-w-[310px] flex-col text-center">
-            <Image src={"/step1.png"} width={224} height={224} />
+            <Image src={"/step1.png"} width={224} height={224} alt=""/>
             <h2 className="text-[30px] text-white font-bold font-nunito">
               Intervent
             </h2>
@@ -47,7 +47,7 @@ const Steps = () => {
             </p>
           </div>
           <div className="flex justify-start h-[300px] items-center w-full max-w-[310px] flex-col text-center">
-            <Image src={"/step1.png"} width={224} height={224} />
+            <Image src={"/step1.png"} width={224} height={224} alt="" />
             <h2 className="text-[30px] text-white font-bold font-nunito">
               Enjoy Life
             </h2>

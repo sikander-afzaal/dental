@@ -14,10 +14,10 @@ const Quality = () => {
         </div>
         <div className="relative xl:min-h-[760px] xl:max-w-[900px] mt-[40px] w-full py-10 xl:py-[160px] px-5 sm:px-10 xl:px-[220px] flex justify-center items-center bg-[#F3FAFA]">
           <div className="absolute xl:block hidden top-[5%] left-0 -translate-x-1/2">
-            <Image width={280} height={414} src={"/quality1.png"} />
+            <Image alt="" width={280} height={414} src={"/quality1.png"} />
           </div>
           <div className="absolute xl:block hidden  bottom-[5%] right-0 translate-x-1/2">
-            <Image width={280} height={350} src={"/quality2.png"} />
+            <Image alt="" width={280} height={350} src={"/quality2.png"} />
           </div>
           <p className="font-nunito max-w-[454px] leading-[27px] text-center font-medium text-base text-[#818181]">
             The treatment is completed on average in 2-3 sessions within 1 week.

@@ -9,30 +9,35 @@ const Brand = () => {
           style={{ objectFit: "contain" }}
           src="/brand1.png"
           height={66}
+          alt=""
         />
         <Image
           width={160}
           style={{ objectFit: "contain" }}
           src="/brand2.png"
           height={66}
+          alt=""
         />
         <Image
           width={160}
           style={{ objectFit: "contain" }}
           src="/brand3.png"
           height={66}
+          alt=""
         />
         <Image
           width={160}
           style={{ objectFit: "contain" }}
           src="/brand4.png"
           height={66}
+          alt=""
         />
         <Image
           width={160}
           style={{ objectFit: "contain" }}
           src="/brand5.png"
           height={66}
+          alt=""
         />
       </div>
     </div>

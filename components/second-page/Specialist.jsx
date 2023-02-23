@@ -6,7 +6,12 @@ const Specialist = () => {
     <div className="flex justify-center items-center w-full mt-[50px] lg:mt-[100px] px-5">
       <div className="flex justify-center lg:flex-row flex-col-reverse w-full items-start gap-[35px] max-w-[1030px]">
         <div className="w-full max-w-[455px] h-[350px] sm:h-[500px] relative lg:self-auto self-center">
-          <Image fill src={"/specialist.png"} style={{ objectFit: "cover" }} />
+          <Image
+            alt=""
+            fill
+            src={"/specialist.png"}
+            style={{ objectFit: "cover" }}
+          />
           <p className="absolute top-3 grid place-items-center rounded-md text-white left-3 bg-[#0643A2] w-[130px] h-[48px] text-[15px] font-semibold font-nunito">
             New
           </p>

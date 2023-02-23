@@ -5,7 +5,12 @@ const Hero = () => {
     <div className="flex justify-center items-center w-full bg-[#F3FAFA] px-5 py-5 lg:py-10">
       <div className="w-full max-w-[1550px] grid grid-cols-1 gap-7 lg:gap-0 lg:grid-cols-2 ">
         <div className="w-full md:h-[450px] h-[300px] lg:h-[582px] row-start-2 lg:row-span-1 row-end-3 relative">
-          <Image src={"/hero-3.png"} fill style={{ objectFit: "cover" }} />
+          <Image
+            alt=""
+            src={"/hero-3.png"}
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
         <div className="flex justify-center items-start flex-col  pt-6 lg:pt-0 lg:px-16">
           <div className="flex flex-col justify-center items-start gap-1 text-left">
