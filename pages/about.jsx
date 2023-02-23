@@ -222,7 +222,7 @@ const about = () => {
             virtual visit.
           </h4>
           <div className="flex justify-center md:flex-row flex-col items-center gap-3 mt-7">
-            <Link href={"/"}>
+            <Link href={"/booking"}>
               <button className="hover:bg-white transition-all duration-300 flex justify-center items-center gap-2 rounded-full bg-[rgba(72,203,212,1)] text-[rgba(51,83,96,1)] w-[248px] h-[52px] text-[15px] font-bold">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +236,7 @@ const about = () => {
               </button>
             </Link>
             <div className="md:block hidden w-[2px] h-[100px] bg-[rgba(235,235,235,.3)]"></div>
-            <Link href={"/"}>
+            <Link href={"/booking"}>
               <button className="hover:bg-white transition-all duration-300  flex justify-center items-center gap-2 rounded-full bg-[rgba(224,179,187,1)] text-[rgba(51,83,96,1)] w-[248px] h-[52px] text-[15px] font-bold">
                 {" "}
                 <svg

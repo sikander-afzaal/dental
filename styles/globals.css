@@ -40,6 +40,15 @@
 .choose-slider {
   width: 100%;
 }
+.ReactFlagsSelect-module_fullWidthOptions__1XeR6 {
+  width: max-content;
+}
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  width: 70px !important;
+  padding: 0 !important;
+  height: 52px !important;
+  border: none !important;
+}
 @media screen and (max-width: 1183px) {
   .slider li {
     display: flex;
