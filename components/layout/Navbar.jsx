@@ -156,9 +156,19 @@ const Navbar = () => {
               </Link>
               <div className="relative lg:h-[92px]">
                 <button
-                  onMouseEnter={() => setDropDown(true)}
+                  onMouseEnter={() =>
+                    setDropDown(() => {
+                      if (window.innerWidth <= 1024) return;
+                      return true;
+                    })
+                  }
                   onClick={() => setDropDown((prev) => !prev)}
-                  onMouseLeave={() => setDropDown(false)}
+                  onMouseLeave={() =>
+                    setDropDown(() => {
+                      if (window.innerWidth <= 1024) return;
+                      return false;
+                    })
+                  }
                   className="flex  lg:h-full gap-2 items-center"
                 >
                   <p className="font-bold text-lg lg:text-sm xl:text-base  no-underline text-text-black">
@@ -176,7 +186,7 @@ const Navbar = () => {
                   <div
                     onMouseEnter={() => setDropDown(true)}
                     onMouseLeave={() => setDropDown(false)}
-                    className={` rounded-lg flex transition-all duration-300 py-2 lg:max-h-[500px] overflow-y-auto hide-scroll static lg:absolute lg:px-2 top-[80%] lg:bg-white lg:shadow-2xl lg:drop-shadow-2xl  lg:z-[60] min-w-[220px]  w-max flex-col `}
+                    className={` rounded-lg lg:grid grid-cols-2 gap-x-3 flex transition-all duration-300 py-2 lg:max-h-[500px] overflow-y-auto hide-scroll static lg:absolute lg:px-2 top-[80%] lg:bg-white lg:shadow-2xl lg:drop-shadow-2xl  lg:z-[60] min-w-[220px]  w-max flex-col `}
                   >
                     {treatments.map((t, index) => (
                       <Link
